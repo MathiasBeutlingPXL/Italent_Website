@@ -1,0 +1,291 @@
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --background-color: #f5f6fa;
+    --card-background: #ffffff;
+    --text-color: #2c3e50;
+    --border-radius: 8px;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+header nav {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+header nav a.active {
+    background-color: var(--secondary-color);
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--card-background);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.filter-btn.active {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+.activity-header {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.activity-header img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.activity-header-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    color: white;
+}
+
+.activity-header-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.activity-header-content .type {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.seminars-container, .events-container, .sessions-container, .activities-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.seminar-card, .event-card, .session-card, .activity-card {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.seminar-card:hover, .event-card:hover, .session-card:hover, .activity-card:hover {
+    transform: translateY(-5px);
+}
+
+.activity-card {
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.activity-image {
+    width: 300px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+.activity-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.activity-content {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.activity-content .date,
+.activity-content .time,
+.activity-content .location {
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+}
+
+.activity-content .description {
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.seminar-card h2, .event-card h2, .session-card h2, .activity-card h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.seminar-card .type, .event-card .type, .session-card .type, .activity-card .type {
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.seminar-card .date, .event-card .date, .session-card .date, .activity-card .date {
+    color: var(--secondary-color);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.seminar-card .time, .event-card .time, .session-card .time, .activity-card .time {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.seminar-card .location, .event-card .location, .session-card .location, .activity-card .location {
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.seminar-card .description, .event-card .description, .session-card .description, .activity-card .description {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.seminar-card.verleden, .event-card.verleden, .session-card.verleden, .activity-card.verleden {
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .activity-header {
+        height: 300px;
+    }
+
+    .activity-header-content h1 {
+        font-size: 2rem;
+    }
+
+    .seminars-container, .events-container, .sessions-container, .activities-container {
+        grid-template-columns: 1fr;
+    }
+
+    .seminar-card, .event-card, .session-card, .activity-card {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-card {
+        flex-direction: column;
+    }
+
+    .activity-image {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.about-section {
+    background-color: var(--card-background);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.about-section:hover {
+    transform: translateY(-5px);
+}
+
+.about-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.about-section p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+} 
