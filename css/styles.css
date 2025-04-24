@@ -154,6 +154,10 @@ main {
     flex-direction: row-reverse;
 }
 
+.activity-card.has-details {
+    background-color: #f5f6fa;
+}
+
 .activity-image {
     width: 300px;
     height: auto;
@@ -288,4 +292,4 @@ main {
     color: var(--text-color);
     line-height: 1.6;
     margin-bottom: 0.5rem;
-} 
+}
