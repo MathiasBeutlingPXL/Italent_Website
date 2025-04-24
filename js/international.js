@@ -38,6 +38,7 @@ function createActivityCard(activity) {
             <div class="time">${activity.duration}</div>
             <div class="location">${activity.location}</div>
             <div class="description">${activity.description}</div>
+            <a href="BuitenlandseReis.html" class="details-link">Lees meer</a>
         </div>
     `;
 
@@ -68,10 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
         container.appendChild(createActivityCard(activities[0]));
     }
 
-    // Initiële weergave
     filterActivities('alles');
 
-    // Voeg event listeners toe aan filterknoppen
     document.querySelectorAll('.filter-btn').forEach(button => {
         button.addEventListener('click', () => {
             document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
@@ -79,4 +78,4 @@ document.addEventListener('DOMContentLoaded', () => {
             filterActivities(button.dataset.filter);
         });
     });
-}); 
+});

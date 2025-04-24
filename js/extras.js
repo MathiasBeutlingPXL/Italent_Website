@@ -25,7 +25,9 @@ const activities = [
         description: "Voor het vak Software Analysis van Nathalie Fuchs gingen we naar de ballonsvaardersdag 2023 om op basis hiervan een contextdiagram, een BUC-diagram en een domeinmodel te maken.",
         location: "PXL/Upconsulting, 't Bau-Huis, Slachthuisstraat 60 Sint Niklaas",
         date: "2023-11-25",
-        time: "13:00-18:00"
+        time: "13:00-18:00",
+        image: "../images/picture4.jpg",
+        imageAlt: "Ballonvaart"
     }
 ];
 
@@ -55,6 +57,9 @@ function createActivityCard(activity) {
             <div class="time">${activity.time}</div>
             <div class="location">${activity.location}</div>
             <div class="description">${activity.description}</div>
+            ${activity.title.includes("Pitch Please") ? `
+            <a href="PitchPlease.html" class="details-link">Lees meer</a>
+            ` : ''}
         </div>
     `;
 
@@ -69,4 +74,4 @@ document.addEventListener('DOMContentLoaded', () => {
             container.appendChild(createActivityCard(activity));
         });
     }
-}); 
+});

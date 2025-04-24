@@ -57,6 +57,9 @@ function createActivityCard(activity) {
             ${activity.time ? `<div class="time">${activity.time}</div>` : ''}
             <div class="location">${activity.location}</div>
             <div class="description">${activity.description}</div>
+            ${activity.title.includes("Assertiviteit") ? `
+            <a href="Assertiviteitstraining.html" class="details-link">Lees meer</a>
+            ` : ''}
         </div>
     `;
 
@@ -71,4 +74,4 @@ document.addEventListener('DOMContentLoaded', () => {
             container.appendChild(createActivityCard(activity));
         });
     }
-}); 
+});
